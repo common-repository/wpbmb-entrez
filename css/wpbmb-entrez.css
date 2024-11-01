@@ -1,0 +1,288 @@
+/*
+    Default stylings for Entrez entries
+    Most are overriden with template specific values (see toward the bottom)
+*/
+.wbe-default {
+    padding: 0 5px;
+}
+
+.wbe-entry,
+.featherlight-content {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+	margin-bottom: 10px;
+}
+
+.wbe-title,
+.lightbox .wbe-title {
+    font-size: 16px;
+    font-weight: 400;
+	line-height: 1.25;
+    color: black;
+}
+
+.wbe-details {
+    display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 14px;
+}
+
+.wbe-links a,
+.wbe-links a:hover {
+    text-decoration: none;
+}
+
+.wbe-authors {
+    flex-grow: 3;
+    width: 100%;
+    text-align: left;
+    padding-right: 5px;
+    padding-left: 0px;
+    line-height: 1.3;
+}
+
+.wbe-links {
+	display: flex;
+	flex-direction: row;
+	padding: 0 10px 0 0;
+    font-weight: 600;
+}
+
+.wbe-links-inline {
+	display: inline-flex;
+	padding: 0 5px 0 0;
+	padding-left: 5px;
+    font-size: 13px;
+}
+
+.wbe-abstract {
+    font-size: 14px;
+	padding: inherit;
+    line-height: 20px;
+}
+
+.wbe-db {
+   padding: inherit;
+}
+
+.wbe-journal {
+    padding: inherit;
+}
+
+.wbe-viewmore {
+    display: none;
+}
+
+.wbe-references {
+    line-height: 1.1 !important;
+}
+
+.wbe-spacer-dash {
+    margin-top: 30px;
+    margin-bottom: 40px !important;
+    height: 1px;
+    background-color: rgb(194, 194, 194);
+    width: 50%;
+    position: relative;
+    right: -25%;
+}
+
+/* Highlights */
+.wbe-display-highlights-bold {
+    font-weight: 600;
+}
+
+.wbe-display-highlights-italic {
+    font-style: italic;
+}
+
+.wbe-display-highlights-underline {
+    text-decoration: underline;
+}
+
+.wbe-display-highlights-background {
+    background: yellow !important;
+}
+
+/* Lightbox stylings */
+.featherlight-close-icon {
+    background: transparent !important;
+	font-size: 18px !important;
+	top: 5px !important;
+	right: 5px !important;
+}
+
+.fixwidth {
+    background: rgba(0,0,0, 0.8);
+}
+
+.fixwidth .featherlight-content {
+    width: 80%;
+    max-width: 980px;
+    padding: 25px;
+    padding-bottom: 5px;
+    color: #fff;
+    background: #EBEBEB !important;
+    border-bottom-width: 0px !important;
+}
+
+.lightbox {
+    display: none;
+    color: black;
+    border: none !important;
+}
+
+.lightbox .wbe-title {
+    color: black;
+    font-size: 18px;
+    line-height: 1.25;
+    margin-bottom: 5px;
+}
+
+.lightbox .wbe-authors {
+    color: #0081cc;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+	width: 90%;
+	line-height: 1.3;
+}
+
+.lightbox .wbe-abstract,
+.wbe-abstract {
+    color: #535353;
+    text-align: justify;
+    font-weight: 400;
+	line-height: 20px;
+}
+
+.lightbox .wbe-details,
+.lightbox .wbe-links {
+    justify-content: flex-end;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+	flex-direction: row !important;;
+	padding: 0 5px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.lightbox .wbe-viewmore {
+    font-weight: 500;
+    align-self: center;
+    display: inherit;
+    /*display: block;*/
+}
+
+.lightbox .wbe-links .wbe-abstract {
+    display: none;
+}
+
+@media only screen and (max-width:1024px) {
+    .featherlight .featherlight-content {
+        margin-left: 0;
+        margin-right: 0;
+        max-height: 98%;
+        padding: 25px !important;
+        border-bottom: 10px solid transparent
+    }
+}
+
+/*
+   Custom stylings by template
+   The general idea is a dynamically generated class tag is inserted
+   into the templates as they are processed. To make it so that you can
+   target a specific template ONLY the last class tag is defined as
+   (name-of-template)-element.
+
+   name-of-template is the portion of the of the file without the plugin
+   prefix or the trailing .php.
+
+   element is the actual block (partial or otherwise) that is being rendered (title, author, etc...)
+
+   SO:
+
+   (file)       wbe-inline-abstract.php
+   (class tag)  inline-abstract-(element) (e.g. inline-abstract-authors)
+
+   This also works with user templates provided they use the naming conventions that plugin is looking for.
+   */
+
+/*Inline Abstract template*/
+.inline-abstract-title,
+.inline-abstract-authors{
+
+    text-align: center !important;
+
+}
+
+.inline-abstract-title {
+
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+.inline-abstract-links {
+    justify-content: center;
+}
+
+.inline-abstract-abstract {
+    margin: 20px 0 10px 0;
+}
+
+/* References template */
+.references-authors,
+.references-links-authors {
+    line-height: 1.1 !important;
+}
+
+.references-title,
+.references-links-title {
+    font-size: 14px;
+    line-height: 1.1;
+}
+
+/* Structure Template */
+.wbe-str-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.wbe-str-img {
+    min-width: 200px;
+    max-width: 200px;
+    flex: 0 0 auto;
+}
+
+.wbe-str-info {
+    padding-left: 20px;
+}
+
+.wbe-str-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.1;
+    color: black;
+}
+
+.wbe-str-details {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: dimgray;
+}
+
+.wbe-str-subtitle {
+    font-weight: 600;
+}
+
+.wbe-str-pheader {
+    font-weight: 600;
+}
+
+.structure-title {
+    font-size: 14px;
+}
